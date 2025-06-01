@@ -69,3 +69,9 @@ img {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+
+.text {
+  font-size: var(--font-size-24);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-white);
+}

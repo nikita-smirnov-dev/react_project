@@ -1,0 +1,9 @@
+.nav {
+  margin-right: var(--spacing-40);
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-40);
+}
