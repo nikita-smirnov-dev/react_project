@@ -7,7 +7,5 @@ interface ButtonProps {
 }
 
 export const Button: FC<ButtonProps> = ({ children, className = '' }) => {
-  return (
-    <button className={`button btn-reset ${className}`}>{children}</button>
-  );
+  return <button className={`button  ${className}`}>{children}</button>;
 };

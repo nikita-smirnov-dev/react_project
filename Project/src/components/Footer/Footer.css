@@ -1,0 +1,6 @@
+.footer__container {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  padding: var(--spacing-40) 0;
+}

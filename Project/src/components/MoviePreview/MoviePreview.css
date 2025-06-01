@@ -1,0 +1,110 @@
+.movie-preview {
+  display: flex;
+  margin-bottom: var(--spacing-40);
+}
+
+.movie-preview__left {
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* height: 552px; */
+  max-width: 600px;
+  padding-top: var(--spacing-70);
+  margin-right: var(--spacing-20);
+}
+
+.movie-preview__left-info {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: var(--spacing-16);
+  margin-bottom: var(--spacing-16);
+}
+
+.movie-preview__left-raiting {
+  font-size: var(--font-size-18);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+}
+
+.movie-preview__left-year,
+.movie-preview__left-genre,
+.movie-preview__left-runtime {
+  font-size: var(--font-size-18);
+  color: var(--color-gradient-gray);
+}
+
+.movie-preview__left-title {
+  margin: 0;
+  margin-bottom: var(--spacing-24);
+  font-weight: 700;
+  font-size: var(--font-size-48);
+  color: var(--color-white);
+}
+
+.movie-preview__description-container {
+  display: inline-block;
+  margin-bottom: var(--spacing-60);
+}
+
+.movie-preview__left-descr {
+  margin: 0;
+  font-size: var(--font-size-24);
+  color: var(--color-gradient-gray);
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: var(--spacing-20);
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.movie-preview__buttons-container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-16);
+  margin-top: auto;
+}
+
+.movie-preview__trailer {
+  padding: var(--spacing-16) var(--spacing-48);
+  background-color: var(--color-blue-button);
+  white-space: nowrap;
+  border: none;
+}
+
+.movie-preview__action-buttons {
+  display: flex;
+  gap: var(--spacing-16);
+  width: 100%;
+}
+
+.movie-preview__film {
+  padding: var(--spacing-16) var(--spacing-48);
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  background-color: var(--color-cape-cod-button);
+  white-space: nowrap;
+}
+
+.movie-preview__favorite,
+.movie-preview__update {
+  padding: var(--spacing-16) var(--spacing-24);
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  background-color: var(--color-shaft-button);
+}
+
+.movie-preview__favorite-svg,
+.movie-preview__update-svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 18px;
+}
+
+.movie-preview__right img {
+  width: 680px;
+  height: 552px;
+  border-radius: 16px;
+  object-fit: cover;
+}
