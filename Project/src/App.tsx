@@ -1,13 +1,19 @@
 import './App.css';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
-import { Home } from './pages/Home';
+import { MovieDetails } from './pages/MovieDetails';
+// import { MoviesByGenre } from './pages/MoviesByGenre';
+// import { Genres } from './pages/Genres';
+// import { Home } from './pages/Home';
 
 function App() {
   return (
     <div className="container">
       <Header />
-      <Home />
+      {/* <Home /> */}
+      {/* <Genres /> */}
+      {/* <MoviesByGenre /> */}
+      <MovieDetails />
       <Footer />
     </div>
   );

@@ -6,4 +6,5 @@
   line-height: 1.3;
   color: var(--color-white);
   cursor: pointer;
+  border: none;
 }

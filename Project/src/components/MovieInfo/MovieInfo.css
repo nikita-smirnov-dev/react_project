@@ -1,0 +1,24 @@
+.movie-info {
+  width: 100%;
+}
+
+.movie-info__text {
+  display: flex;
+  align-items: center;
+  width: 45%;
+  margin: 0;
+  margin-bottom: var(--spacing-24);
+  font-size: var(--font-size-18);
+  color: var(--color-white);
+}
+
+.movie-info__dots {
+  flex-grow: 1;
+  border-bottom: 1px dotted var(--color-gradient-gray);
+  margin: 0 10px;
+}
+
+.movie-info__value {
+  flex: 0 0 200px;
+  text-align: left;
+}

@@ -1,0 +1,16 @@
+.genres {
+  padding-top: var(--spacing-32);
+  margin-bottom: var(--spacing-160);
+}
+
+.genres__title {
+  margin: 0;
+  margin-bottom: var(--spacing-64);
+}
+
+.genres__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  column-gap: var(--spacing-40);
+  row-gap: var(--spacing-64);
+}

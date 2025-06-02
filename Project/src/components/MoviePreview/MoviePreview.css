@@ -67,7 +67,6 @@
   padding: var(--spacing-16) var(--spacing-48);
   background-color: var(--color-blue-button);
   white-space: nowrap;
-  border: none;
 }
 
 .movie-preview__action-buttons {
@@ -85,7 +84,7 @@
 
 .movie-preview__favorite,
 .movie-preview__update {
-  padding: var(--spacing-16) var(--spacing-24);
+  padding: var(--spacing-18) var(--spacing-24);
   border: 1px solid rgba(0, 0, 0, 0.4);
   background-color: var(--color-shaft-button);
 }

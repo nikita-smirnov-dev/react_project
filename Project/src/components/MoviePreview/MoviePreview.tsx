@@ -5,8 +5,15 @@ import { RiLoopRightLine } from 'react-icons/ri';
 import MovieData from '../../data/movie.json';
 
 import './MoviePreview.css';
+interface MoviePreviewProps {
+  showFilmButton?: boolean;
+  showUpdateButton?: boolean;
+}
 
-export const MoviePreview: FC = () => {
+export const MoviePreview: FC<MoviePreviewProps> = ({
+  showFilmButton = true,
+  showUpdateButton = true,
+}) => {
   return (
     <div className="movie-preview">
       <div className="movie-preview__left">
@@ -27,13 +34,18 @@ export const MoviePreview: FC = () => {
             <Button className="movie-preview__trailer">Трейлер</Button>
           </div>
           <div className="movie-preview__action-buttons ">
-            <Button className="movie-preview__film">О фильме</Button>
+            {showFilmButton && (
+              <Button className="movie-preview__film">О фильме</Button>
+            )}
+
             <Button className="movie-preview__favorite">
               <RiHeart3Line className="movie-preview__favorite-svg" />
             </Button>
-            <Button className="movie-preview__update">
-              <RiLoopRightLine className="movie-preview__update-svg" />
-            </Button>
+            {showUpdateButton && (
+              <Button className="movie-preview__update">
+                <RiLoopRightLine className="movie-preview__update-svg" />
+              </Button>
+            )}
           </div>
         </div>
       </div>

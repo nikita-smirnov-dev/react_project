@@ -1,0 +1,39 @@
+.card-genre {
+  position: relative;
+  /* max-width: 290px; */
+  width: 100%;
+  height: 304px;
+  border: 1px solid var(--color-border-card);
+  border-radius: 24px;
+  box-shadow: 0 0 80px 0 var(--color-shadow-card);
+  background-color: var(--color-genre-card);
+  overflow: hidden;
+  cursor: pointer;
+  transition: border 0.2s ease-in-out;
+}
+
+.card-genre:hover {
+  border: 1px solid var(--color-white);
+}
+
+.card-genre__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-genre-card-text);
+}
+
+.card-genre__text {
+  margin: 0;
+  padding: 30px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.card-genre__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

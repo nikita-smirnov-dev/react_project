@@ -7,6 +7,8 @@
   --color-shaft-button: #333333;
   --color-favorite-movie: #b4a9ff;
   --color-raiting-top-movie: #6a5dc2;
+  --color-genre-card-text: #0a0b0b;
+  --color-genre-card: #616161;
   --color-gradient-gray: rgba(255, 255, 255, 0.5);
   --color-social-footer: rgba(255, 255, 255, 0.8);
   --color-border-card: rgba(255, 255, 255, 0.25);
@@ -34,6 +36,7 @@
   --spacing-18: 1.125rem;
   --spacing-20: 1.25rem;
   --spacing-24: 1.5rem;
+  --spacing-30: 1.875rem;
   --spacing-32: 2rem;
   --spacing-40: 2.5rem;
   --spacing-48: 3rem;
@@ -42,4 +45,5 @@
   --spacing-70: 4.375rem;
   --spacing-80: 5rem;
   --spacing-120: 7.5rem;
+  --spacing-160: 10rem;
 }
