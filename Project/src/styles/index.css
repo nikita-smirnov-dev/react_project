@@ -69,6 +69,12 @@ img {
   border: 0;
 }
 
+.section-title {
+  font-weight: 700;
+  font-size: var(--font-size-48);
+  color: var(--color-white);
+}
+
 .text {
   font-size: var(--font-size-24);
   font-weight: var(--font-weight-regular);

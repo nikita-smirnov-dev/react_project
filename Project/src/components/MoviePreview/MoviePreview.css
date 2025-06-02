@@ -36,9 +36,6 @@
 .movie-preview__left-title {
   margin: 0;
   margin-bottom: var(--spacing-24);
-  font-weight: 700;
-  font-size: var(--font-size-48);
-  color: var(--color-white);
 }
 
 .movie-preview__description-container {

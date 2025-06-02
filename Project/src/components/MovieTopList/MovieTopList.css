@@ -1,0 +1,18 @@
+.top-movies {
+  margin-bottom: var(--spacing-120);
+}
+
+.top-movies__title {
+  margin: 0;
+  margin-bottom: var(--spacing-64);
+  font-weight: 700;
+  font-size: var(--font-size-40);
+  color: var(--color-white);
+}
+
+.top-movies__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  column-gap: var(--spacing-40);
+  row-gap: var(--spacing-64);
+}

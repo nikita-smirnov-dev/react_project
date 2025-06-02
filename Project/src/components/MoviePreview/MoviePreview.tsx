@@ -16,7 +16,9 @@ export const MoviePreview: FC = () => {
           <span className="movie-preview__left-genre">{MovieData.genre}</span>
           <span className="movie-preview__left-runtime">{MovieData.time}</span>
         </div>
-        <h1 className="movie-preview__left-title">{MovieData.title}</h1>
+        <h1 className="movie-preview__left-title section-title">
+          {MovieData.title}
+        </h1>
         <div className="movie-preview__description-container">
           <p className="movie-preview__left-descr">{MovieData.description}</p>
         </div>
