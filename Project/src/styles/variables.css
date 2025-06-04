@@ -9,6 +9,10 @@
   --color-raiting-top-movie: #6a5dc2;
   --color-genre-card-text: #0a0b0b;
   --color-genre-card: #616161;
+  --color-exellent-rating: #a59400;
+  --color-good-rating: #308e21;
+  --color-average-rating: #777777;
+  --color-poor-rating: #c82020;
   --color-gradient-gray: rgba(255, 255, 255, 0.5);
   --color-social-footer: rgba(255, 255, 255, 0.8);
   --color-border-card: rgba(255, 255, 255, 0.25);

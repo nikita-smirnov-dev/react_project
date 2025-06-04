@@ -1,0 +1,15 @@
+.data-loader-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  padding: var(--spacing-20);
+  color: var(--color-white);
+}
+
+.loader.small {
+  width: 40px;
+  height: 40px;
+  border-width: 3px;
+}

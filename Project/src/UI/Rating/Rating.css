@@ -1,0 +1,33 @@
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 32px;
+  padding: var(--spacing-4) var(--spacing-12);
+  border-radius: 16px;
+  color: var(--color-white);
+  /* background-color: green; */
+}
+
+.rating-excellent {
+  background-color: var(--color-exellent-rating);
+}
+
+.rating-good {
+  background-color: var(--color-good-rating);
+}
+
+.rating-average {
+  background-color: var(--color-average-rating);
+}
+
+.rating-poor {
+  background-color: var(--color-poor-rating);
+}
+
+.rating__svg {
+  width: 15px;
+  height: 15px;
+  margin-right: var(--spacing-4);
+}

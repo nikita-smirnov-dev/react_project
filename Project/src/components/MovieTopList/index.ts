@@ -1,1 +1,2 @@
-export {MovieTopList} from './MovieTopList'
+export { MovieTopList } from './MovieTopList';
+export { FetchMovieTopList } from './FetchMovieTopList';

@@ -1,15 +1,15 @@
 import type { FC } from 'react';
-import { MoviePreview } from '../../components/MoviePreview';
-import { MovieTopList } from '../../components/MovieTopList';
+import { FetchMoviePreview } from '../../components/MoviePreview';
+import { FetchMovieTopList } from '../../components/MovieTopList';
 
 export const Home: FC = () => {
   return (
     <main>
       <section>
-        <MoviePreview />
+        <FetchMoviePreview />
       </section>
       <section>
-        <MovieTopList />
+        <FetchMovieTopList />
       </section>
     </main>
   );

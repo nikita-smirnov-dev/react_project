@@ -4,8 +4,17 @@ import './Button.css';
 interface ButtonProps {
   className?: string;
   children: React.ReactNode;
+  onClick?: VoidFunction;
 }
 
-export const Button: FC<ButtonProps> = ({ children, className = '' }) => {
-  return <button className={`button  ${className}`}>{children}</button>;
+export const Button: FC<ButtonProps> = ({
+  children,
+  className = '',
+  onClick,
+}) => {
+  return (
+    <button className={`button  ${className}`} onClick={onClick}>
+      {children}
+    </button>
+  );
 };
