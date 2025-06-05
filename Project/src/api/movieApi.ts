@@ -1,6 +1,10 @@
 import {
+  GenreArraySchema,
+  MovieByGenreSchema,
   RandomMovieSchema,
   TopMovieListSchema,
+  type GenreArray,
+  type MovieByGenre,
   type RandomMovie,
   type TopMovieList,
 } from '../types/movieTypes';
@@ -31,6 +35,34 @@ export const fetchTopMovie = async (): Promise<TopMovieList> => {
     const data = await response.json();
     // console.log('API response:', data);
     return TopMovieListSchema.parse(data);
+  } catch (error) {
+    console.error('Top movies fetch error:', error);
+    throw error;
+  }
+};
+
+export const fetchMovieGenres = async (): Promise<GenreArray> => {
+  try {
+    const response = await fetch(`${API_BASE_URL}${endpoints.genresMovie}`);
+    const data = await response.json();
+    return GenreArraySchema.parse(data);
+  } catch (error) {
+    console.error('Genres movies fetch error:', error);
+    throw error;
+  }
+};
+export const fetchMoviesByGenre = async (
+  genreSlug: string,
+  count: number,
+  page: number
+): Promise<MovieByGenre> => {
+  try {
+    const response = await fetch(
+      `${API_BASE_URL}${endpoints.movie}?genre=${genreSlug}&count=${count}&page=${page}`
+    );
+    const data = await response.json();
+    // console.log('API response:', data);
+    return MovieByGenreSchema.parse(data);
   } catch (error) {
     console.error('Top movies fetch error:', error);
     throw error;

@@ -4,4 +4,5 @@ export const endpoints = {
   movie: '/movie',
   randomMovie: '/movie/random',
   topMovie: '/movie/top10',
+  genresMovie: '/movie/genres',
 };

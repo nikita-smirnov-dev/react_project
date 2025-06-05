@@ -4,11 +4,13 @@ import type { FC } from 'react';
 import { fetchTopMovie } from '../../api/movieApi';
 import { DataLoader } from '../../UI/DataLoader';
 import { MovieTopList } from './MovieTopList';
+import { ErrorMessage } from '../../UI/ErrorMessage';
 
 export const FetchMovieTopList: FC = () => {
   const movieTopQuery = useQuery({
     queryFn: () => fetchTopMovie(),
     queryKey: ['topMovie'],
+    retry: 1,
   });
 
   switch (movieTopQuery.status) {
@@ -22,12 +24,10 @@ export const FetchMovieTopList: FC = () => {
       return <MovieTopList movieTopList={movieTopQuery.data} />;
     case 'error':
       return (
-        <div>
-          <span>Произошла ошибка!</span>
-          <button onClick={() => movieTopQuery.refetch()}>
-            Повторить запрос
-          </button>
-        </div>
+        <ErrorMessage
+          message="Не удалось загрузить фильмы!"
+          onClick={() => movieTopQuery.refetch()}
+        />
       );
   }
 };

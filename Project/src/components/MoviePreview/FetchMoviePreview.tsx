@@ -3,6 +3,7 @@ import { useEffect, type FC } from 'react';
 import { fetchRandomMovie } from '../../api/movieApi';
 import { DataLoader } from '../../UI/DataLoader';
 import { MoviePreview } from './MoviePreview';
+import { ErrorMessage } from '../../UI/ErrorMessage';
 
 export const FetchMoviePreview: FC = () => {
   const { isLoading, data, isError, refetch } = useQuery({
@@ -39,10 +40,10 @@ export const FetchMoviePreview: FC = () => {
 
   if (isError) {
     return (
-      <div>
-        <span>Произошла ошибка!</span>
-        <button onClick={() => refetch()}>Повторить запрос</button>
-      </div>
+      <ErrorMessage
+        message="Не удалось загрузить фильм!"
+        onClick={() => refetch()}
+      />
     );
   }
 

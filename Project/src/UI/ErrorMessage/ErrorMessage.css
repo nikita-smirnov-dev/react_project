@@ -1,0 +1,17 @@
+.error-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  padding: var(--spacing-20);
+}
+
+.error-message {
+  margin-bottom: var(--spacing-12);
+}
+
+.error-btn {
+  padding: var(--spacing-16) var(--spacing-48);
+  background-color: var(--color-blue-button);
+}

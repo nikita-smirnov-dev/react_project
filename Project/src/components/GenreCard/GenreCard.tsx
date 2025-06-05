@@ -1,22 +1,24 @@
 import type { FC } from 'react';
-import DataMovie from '../../data/movie.json';
 
 import './GenreCard.css';
+import type { MovieGenre } from '../../types/movieTypes';
 
 interface GenreCardProps {
+  genreMovie: MovieGenre;
   className?: string;
 }
 
-export const GenreCard: FC<GenreCardProps> = ({ className }) => {
+export const GenreCard: FC<GenreCardProps> = ({ genreMovie, className }) => {
   return (
     <div className={`card-genre ${className || ''}`}>
       <img
-        src={DataMovie.poster}
+        src={genreMovie.image}
+        alt={genreMovie.title}
         className={`card-genre__img ${className || ''}`}
       />
       <div className={`card-genre__content ${className || ''}`}>
         <p className={`card-genre__text text ${className || ''}`}>
-          {DataMovie.genre}
+          {genreMovie.title}
         </p>
       </div>
     </div>

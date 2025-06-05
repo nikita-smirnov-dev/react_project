@@ -54,3 +54,30 @@ export type TopMovie = z.infer<typeof TopMovieSchema>;
 export const TopMovieListSchema = z.array(TopMovieSchema);
 
 export type TopMovieList = z.infer<typeof TopMovieListSchema>;
+
+// Genre schema
+
+export const GenreArraySchema = z.array(z.string());
+
+export type GenreArray = z.infer<typeof GenreArraySchema>;
+
+export const MovieGenreSchema = z.object({
+  id: z.string(),
+  slug: z.string(),
+  title: z.string(),
+  image: z.string(),
+});
+
+export type MovieGenre = z.infer<typeof MovieGenreSchema>;
+
+// Movie by genre schema
+
+export const MovieByGenreSchema = z.array(
+  BaseMovieSchema.pick({
+    id: true,
+    genres: true,
+    posterUrl: true,
+  })
+);
+
+export type MovieByGenre = z.infer<typeof MovieByGenreSchema>;
