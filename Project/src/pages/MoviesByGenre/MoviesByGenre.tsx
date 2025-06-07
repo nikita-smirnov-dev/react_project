@@ -1,11 +1,13 @@
 import type { FC } from 'react';
 import { IoIosArrowBack } from 'react-icons/io';
 
+import type { MovieByGenre } from '../../types/movieTypes';
 import { MovieCard } from '../../UI/MovieCard';
 import { Button } from '../../UI/Button';
 
 import './MoviesByGenre.css';
-import type { MovieByGenre } from '../../types/movieTypes';
+import { Link, useParams } from 'react-router-dom';
+import { genreTranslations } from '../../assets/data/genreTranslations';
 
 interface MoviesByGenresProps {
   movieListByGenre: MovieByGenre;
@@ -16,17 +18,30 @@ export const MoviesByGenre: FC<MoviesByGenresProps> = ({
   movieListByGenre,
   onloadMore,
 }) => {
+  const { genreSlug } = useParams();
+  const genreTitle =
+    genreTranslations[genreSlug as keyof typeof genreTranslations];
+
   return (
     <main>
       <section className="movies-genres">
         <div className="movies-genres__block">
-          <IoIosArrowBack className="movies-genres__svg" />
-          <h1 className="movies-genres__title section-title">Детектив</h1>
+          <Link
+            className="movies-genres__button"
+            to=".."
+            relative="path"
+            aria-label="Вернуться к списку жанров"
+          >
+            <IoIosArrowBack className="movies-genres__svg" />
+          </Link>
+          <h1 className="movies-genres__title section-title">
+            {genreTitle ? genreTitle : genreSlug}
+          </h1>
         </div>
         <ul className="movies-genres__list list-reset">
-          {movieListByGenre.map((movie) => (
-            <li className="movies-genres__item" key={movie.id}>
-              <MovieCard movie={movie} hideRaiting={true} />
+          {movieListByGenre.map((genre) => (
+            <li className="movies-genres__item" key={genre.id}>
+              <MovieCard movie={genre} hideRaiting={true} />
             </li>
           ))}
         </ul>

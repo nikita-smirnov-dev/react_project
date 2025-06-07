@@ -64,7 +64,7 @@ export const fetchMoviesByGenre = async (
     // console.log('API response:', data);
     return MovieByGenreSchema.parse(data);
   } catch (error) {
-    console.error('Top movies fetch error:', error);
+    console.error('Movie be genres movies fetch error:', error);
     throw error;
   }
 };

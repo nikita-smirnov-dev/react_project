@@ -9,6 +9,7 @@ import { DataLoader } from '../../UI/DataLoader';
 import { ErrorMessage } from '../../UI/ErrorMessage';
 
 import './Genres.css';
+import { Link } from 'react-router-dom';
 
 export const Genres = () => {
   const {
@@ -46,7 +47,9 @@ export const Genres = () => {
             <ul className="genres__list list-reset">
               {genres.map((genre) => (
                 <li key={genre.slug}>
-                  <GenreCard genreMovie={genre} />
+                  <Link to={genre.slug}>
+                    <GenreCard genreMovie={genre} />
+                  </Link>
                 </li>
               ))}
             </ul>

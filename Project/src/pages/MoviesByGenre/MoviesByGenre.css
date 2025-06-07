@@ -13,13 +13,25 @@
   margin: 0;
 }
 
+.movies-genres__button {
+  display: flex;
+  align-items: center;
+  margin-right: var(--spacing-20);
+  transform: scale(1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.movies-genres__button:hover {
+  transform: scale(1.5);
+}
+
 .movies-genres__svg {
   width: 35px;
   height: 35px;
   fill: var(--color-white);
 }
 
-.movies-genres__list {
+.movies-genres__list.list-reset {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   column-gap: var(--spacing-40);
