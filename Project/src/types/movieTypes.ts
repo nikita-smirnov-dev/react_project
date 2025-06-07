@@ -81,3 +81,7 @@ export const MovieByGenreSchema = z.array(
 );
 
 export type MovieByGenre = z.infer<typeof MovieByGenreSchema>;
+
+// Details movie schema
+
+export type DetailsMovie = z.infer<typeof BaseMovieSchema>;

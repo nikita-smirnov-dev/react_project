@@ -12,7 +12,6 @@ export const FetchMoviesByGenre: FC = () => {
   const [page, setPage] = useState(1);
   const [allMovies, setAllMovies] = useState<MovieByGenre>([]);
   const { genreSlug } = useParams();
-  console.log(genreSlug);
 
   const genre = genreSlug ?? '';
 

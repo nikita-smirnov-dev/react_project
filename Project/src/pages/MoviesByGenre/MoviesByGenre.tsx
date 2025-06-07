@@ -41,7 +41,9 @@ export const MoviesByGenre: FC<MoviesByGenresProps> = ({
         <ul className="movies-genres__list list-reset">
           {movieListByGenre.map((genre) => (
             <li className="movies-genres__item" key={genre.id}>
-              <MovieCard movie={genre} hideRaiting={true} />
+              <Link to={`/about/${genre.id}`}>
+                <MovieCard movie={genre} hideRaiting={true} />
+              </Link>
             </li>
           ))}
         </ul>

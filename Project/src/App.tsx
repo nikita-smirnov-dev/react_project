@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Home } from './pages/Home';
 import MainLayout from './layout/MainLayout';
 import { Genres } from './pages/Genres';
+import { MovieDetails } from './pages/MovieDetails';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
                 <Route index element={<Genres />} />
                 <Route path=":genreSlug" element={<FetchMoviesByGenre />} />
               </Route>
+              <Route path="about/:id" element={<MovieDetails />} />
             </Route>
           </Routes>
         </div>

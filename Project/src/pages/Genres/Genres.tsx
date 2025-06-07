@@ -19,7 +19,6 @@ export const Genres = () => {
   } = useQuery({
     queryFn: async () => {
       const genreList = await fetchMovieGenres();
-      console.log(genreList);
       return genreList.map(
         (genreName): MovieGenre => ({
           id: genreName,
