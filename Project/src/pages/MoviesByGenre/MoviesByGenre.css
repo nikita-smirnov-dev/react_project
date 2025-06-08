@@ -46,6 +46,5 @@
 }
 
 .movies-genres__btn {
-  padding: var(--spacing-16) var(--spacing-48);
   background-color: var(--color-blue-button);
 }

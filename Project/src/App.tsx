@@ -7,6 +7,10 @@ import { Home } from './pages/Home';
 import MainLayout from './layout/MainLayout';
 import { Genres } from './pages/Genres';
 import { MovieDetails } from './pages/MovieDetails';
+import { Modal } from './components/Modal';
+// import { RegisterSuccess } from './components/RegisterSuccess';
+// import { RegisterForm } from './components/RegisterForm';
+import { LoginForm } from './components/LoginForm';
 
 function App() {
   return (
@@ -23,6 +27,9 @@ function App() {
               <Route path="about/:id" element={<MovieDetails />} />
             </Route>
           </Routes>
+          <Modal>
+            <LoginForm />
+          </Modal>
         </div>
       </BrowserRouter>
     </QueryClientProvider>

@@ -3,6 +3,7 @@ import { MovieCard } from '../../UI/MovieCard';
 import type { TopMovieList } from '../../types/movieTypes';
 
 import './MovieTopList.css';
+import { Link } from 'react-router-dom';
 
 interface MovieTopListProps {
   movieTopList: TopMovieList;
@@ -15,7 +16,9 @@ export const MovieTopList: FC<MovieTopListProps> = ({ movieTopList }) => {
       <ul className="top-movies__list list-reset">
         {movieTopList.map((movie, index) => (
           <li key={movie.id}>
-            <MovieCard movie={movie} index={index} />
+            <Link to={`/about/${movie.id}`}>
+              <MovieCard movie={movie} index={index} />
+            </Link>
           </li>
         ))}
       </ul>

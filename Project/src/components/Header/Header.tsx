@@ -9,7 +9,7 @@ import './Header.css';
 export const Header: FC = () => {
   return (
     <header className="header-container">
-      <Logo />
+      <Logo color="white" className="header-logo" />
       <Navigation />
       <Search />
       <LoginButton title={'Войти'} />

@@ -11,13 +11,16 @@
   --color-genre-card-text: #0a0b0b;
   --color-genre-card: #616161;
   --color-exellent-rating: #a59400;
+  --color-error: #ff7575;
   --color-good-rating: #308e21;
   --color-average-rating: #777777;
   --color-poor-rating: #c82020;
+  --color-modal: rgba(0, 0, 0, 0.5);
   --color-gradient-gray: rgba(255, 255, 255, 0.5);
   --color-social-footer: rgba(255, 255, 255, 0.8);
   --color-border-card: rgba(255, 255, 255, 0.25);
   --color-shadow-card: rgba(255, 255, 255, 0.33);
+  --color-modal-form: rgba(0, 0, 0, 0.4);
 
   --font-size-12: 0.75rem;
   --font-size-14: 0.875rem;

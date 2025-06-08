@@ -64,7 +64,6 @@
 }
 
 .movie-preview__trailer {
-  padding: var(--spacing-16) var(--spacing-48);
   background-color: var(--color-blue-button);
   white-space: nowrap;
 }
@@ -76,7 +75,6 @@
 }
 
 .movie-preview__film {
-  padding: var(--spacing-16) var(--spacing-48);
   border: 1px solid rgba(0, 0, 0, 0.4);
   background-color: var(--color-cape-cod-button);
   white-space: nowrap;
