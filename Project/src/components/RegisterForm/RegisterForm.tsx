@@ -7,7 +7,11 @@ import { RiKeyLine, RiMailSendLine, RiUserLine } from 'react-icons/ri';
 
 import './RegisterForm.css';
 
-export const RegisterForm: FC = () => {
+interface RegisterProps {
+  onLoginClick: VoidFunction;
+}
+
+export const RegisterForm: FC<RegisterProps> = ({ onLoginClick }) => {
   return (
     <div className="modal">
       <Logo className="modal-logo" color="dark" isLink={false} />
@@ -56,9 +60,13 @@ export const RegisterForm: FC = () => {
             </Input>
           </FormField>
         </div>
-        <Button className="modal-form__btn">Создать аккаунт</Button>
+        <Button className="modal-form__btn" onClick={onLoginClick}>
+          Создать аккаунт
+        </Button>
       </form>
-      <Button className="modal-btn">У меня есть пароль</Button>
+      <Button className="modal-btn" onClick={onLoginClick}>
+        У меня есть пароль
+      </Button>
     </div>
   );
 };

@@ -4,12 +4,15 @@ import './Modal.css';
 
 interface ModalProps {
   children: React.ReactNode;
+  isOpen: boolean;
 }
 
-export const Modal: FC<ModalProps> = ({ children }) => {
+export const Modal: FC<ModalProps> = ({ children, isOpen }) => {
   return (
-    <div className="modal-overlay">
-      <div className="modal-content">{children}</div>
-    </div>
+    isOpen && (
+      <div className="modal-overlay">
+        <div className="modal-content">{children}</div>
+      </div>
+    )
   );
 };

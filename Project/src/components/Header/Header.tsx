@@ -6,13 +6,17 @@ import { Search } from '../Search';
 
 import './Header.css';
 
-export const Header: FC = () => {
+interface HeaderProps {
+  onLoginClick: VoidFunction;
+}
+
+export const Header: FC<HeaderProps> = ({ onLoginClick }) => {
   return (
     <header className="header-container">
       <Logo color="white" className="header-logo" />
       <Navigation />
       <Search />
-      <LoginButton title={'Войти'} />
+      <LoginButton title={'Войти'} onClick={onLoginClick} />
     </header>
   );
 };

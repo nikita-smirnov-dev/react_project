@@ -7,30 +7,26 @@ import { Home } from './pages/Home';
 import MainLayout from './layout/MainLayout';
 import { Genres } from './pages/Genres';
 import { MovieDetails } from './pages/MovieDetails';
-import { Modal } from './components/Modal';
-// import { RegisterSuccess } from './components/RegisterSuccess';
-// import { RegisterForm } from './components/RegisterForm';
-import { LoginForm } from './components/LoginForm';
+import { AuthModalProvider } from './context/AuthModalContext';
 
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <div className="container">
-          <Routes>
-            <Route path="/" element={<MainLayout />}>
-              <Route index element={<Home />} />
-              <Route path="genres">
-                <Route index element={<Genres />} />
-                <Route path=":genreSlug" element={<FetchMoviesByGenre />} />
+        <AuthModalProvider>
+          <div className="container">
+            <Routes>
+              <Route path="/" element={<MainLayout />}>
+                <Route index element={<Home />} />
+                <Route path="genres">
+                  <Route index element={<Genres />} />
+                  <Route path=":genreSlug" element={<FetchMoviesByGenre />} />
+                </Route>
+                <Route path="about/:id" element={<MovieDetails />} />
               </Route>
-              <Route path="about/:id" element={<MovieDetails />} />
-            </Route>
-          </Routes>
-          <Modal>
-            <LoginForm />
-          </Modal>
-        </div>
+            </Routes>
+          </div>
+        </AuthModalProvider>
       </BrowserRouter>
     </QueryClientProvider>
   );

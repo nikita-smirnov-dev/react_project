@@ -1,12 +1,17 @@
 import type { FC } from 'react';
-import './LoginForm.css';
 import { Button } from '../../UI/Button';
 import { FormField } from '../../UI/FormField';
 import { Input } from '../../UI/Input';
 import { RiKeyLine, RiMailSendLine } from 'react-icons/ri';
 import { Logo } from '../../UI/Logo';
 
-export const LoginForm: FC = () => {
+import './LoginForm.css';
+
+interface LoginProps {
+  onRegisterClick: VoidFunction;
+}
+
+export const LoginForm: FC<LoginProps> = ({ onRegisterClick }) => {
   return (
     <div className="modal">
       <Logo className="modal-logo" color="dark" isLink={false} />
@@ -35,7 +40,9 @@ export const LoginForm: FC = () => {
           Войти
         </Button>
       </form>
-      <Button className="modal-btn">Регистрация</Button>
+      <Button className="modal-btn" onClick={onRegisterClick}>
+        Регистрация
+      </Button>
     </div>
   );
 };
