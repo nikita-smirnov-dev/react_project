@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import './LoginButton.css';
 
 interface LoginButtonProps {
-  title: string;
+  title: React.ReactNode;
   onClick: VoidFunction;
 }
 

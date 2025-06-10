@@ -5,4 +5,8 @@ export const endpoints = {
   randomMovie: '/movie/random',
   topMovie: '/movie/top10',
   genresMovie: '/movie/genres',
+  login: '/auth/login',
+  user: '/user',
+  profile: '/profile',
+  logout: '/auth/logout',
 };

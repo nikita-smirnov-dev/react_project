@@ -1,22 +1,29 @@
 import { useState, type FC } from 'react';
-import './Auth.css';
+
 import { LoginForm } from '../LoginForm';
 import { RegisterForm } from '../RegisterForm';
 import { RegisterSuccess } from '../RegisterSuccess';
 
+import './Auth.css';
+
 type AuthForm = 'login' | 'register' | 'success';
 
 interface AuthProps {
-  closeModal?: VoidFunction;
+  closeModal: VoidFunction;
 }
 
-export const Auth: FC<AuthProps> = () => {
+export const Auth: FC<AuthProps> = ({ closeModal }) => {
   const [currentForm, setCurrentForm] = useState<AuthForm>('login');
 
   const renderAuthForm = () => {
     switch (currentForm) {
       case 'login':
-        return <LoginForm onRegisterClick={() => setCurrentForm('register')} />;
+        return (
+          <LoginForm
+            onRegisterClick={() => setCurrentForm('register')}
+            onLoginSuccess={closeModal}
+          />
+        );
       case 'register':
         return <RegisterForm onLoginClick={() => setCurrentForm('login')} />;
       case 'success':

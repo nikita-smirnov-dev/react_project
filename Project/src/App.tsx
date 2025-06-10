@@ -8,6 +8,7 @@ import MainLayout from './layout/MainLayout';
 import { Genres } from './pages/Genres';
 import { MovieDetails } from './pages/MovieDetails';
 import { AuthModalProvider } from './context/AuthModalContext';
+import { FetchAccount } from './pages/Account/FetchAccount';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
                   <Route path=":genreSlug" element={<FetchMoviesByGenre />} />
                 </Route>
                 <Route path="about/:id" element={<MovieDetails />} />
+                <Route path="account/*" element={<FetchAccount />} />
               </Route>
             </Routes>
           </div>

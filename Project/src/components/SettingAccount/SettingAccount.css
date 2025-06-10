@@ -1,0 +1,47 @@
+.setting-account {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  gap: var(--spacing-40);
+  margin-bottom: var(--spacing-64);
+}
+
+.setting-account__content {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: var(--spacing-16);
+}
+
+.setting-account__avatar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  font-size: var(--font-size-24);
+  font-weight: var(--font-weight-bold);
+  border-radius: 50%;
+  background-color: var(--color-gradient-gray);
+  color: var(--color-white);
+}
+
+.setting-account__avatar-svg {
+  width: 22px;
+  height: 22px;
+}
+
+.setting-account__text {
+  margin: 0;
+  margin-bottom: 5px;
+  font-size: var(--font-size-18);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-white);
+}
+
+.setting-account__fio {
+  font-size: var(--font-size-24);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+}
