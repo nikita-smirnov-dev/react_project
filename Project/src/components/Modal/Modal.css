@@ -17,7 +17,20 @@
 
 .modal-content {
   position: relative;
+}
+
+.modal-close.btn-reset {
+  position: absolute;
+  top: 0;
+  right: -75px;
+  width: 48px;
+  height: 48px;
   border-radius: 24px;
-  padding: 64px 40px;
   background-color: var(--color-white);
+}
+
+.modal-close_svg {
+  width: 30px;
+  height: 30px;
+  color: var(--color-black);
 }

@@ -1,0 +1,5 @@
+.auth {
+  padding: 64px 40px;
+  background-color: var(--color-white);
+  border-radius: 24px;
+}

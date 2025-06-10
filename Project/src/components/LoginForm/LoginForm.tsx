@@ -75,6 +75,7 @@ export const LoginForm: FC<LoginProps> = ({
               type="email"
               placeholder="Электронная почта"
               {...register('email')}
+              error={errors.email}
             >
               <RiMailSendLine className="modal__form-svg" />
             </Input>
@@ -85,6 +86,7 @@ export const LoginForm: FC<LoginProps> = ({
               type="password"
               placeholder="Пароль"
               {...register('password')}
+              error={errors.password}
             >
               <RiKeyLine className="modal__form-svg" />
             </Input>

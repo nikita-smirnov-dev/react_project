@@ -7,6 +7,7 @@ import './RegisterSuccess.css';
 
 interface RegisterSuccessProps {
   onLoginClick?: VoidFunction;
+  onRegisterClose?: VoidFunction;
 }
 
 export const RegisterSuccess: FC<RegisterSuccessProps> = ({ onLoginClick }) => {

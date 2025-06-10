@@ -27,7 +27,12 @@ export const Auth: FC<AuthProps> = ({ closeModal }) => {
       case 'register':
         return <RegisterForm onLoginClick={() => setCurrentForm('login')} />;
       case 'success':
-        return <RegisterSuccess onLoginClick={() => setCurrentForm('login')} />;
+        return (
+          <RegisterSuccess
+            onLoginClick={() => setCurrentForm('login')}
+            onRegisterClose={closeModal}
+          />
+        );
       default:
         return null;
     }

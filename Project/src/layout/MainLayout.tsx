@@ -40,7 +40,7 @@ const MainLayout: FC = () => {
       />
       <Outlet />
       <Footer />
-      <Modal isOpen={isModalOpen}>
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
         <Auth closeModal={handleClose} />
       </Modal>
     </>
