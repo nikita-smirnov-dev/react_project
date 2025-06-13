@@ -2,11 +2,13 @@ import {
   BaseMovieSchema,
   GenreArraySchema,
   MovieByGenreSchema,
+  MovieSearchListSchema,
   RandomMovieSchema,
   TopMovieListSchema,
   type DetailsMovie,
   type GenreArray,
   type MovieByGenre,
+  type MovieSearchList,
   type RandomMovie,
   type TopMovieList,
 } from '../types/movieTypes';
@@ -63,7 +65,6 @@ export const fetchMoviesByGenre = async (
       `${API_BASE_URL}${endpoints.movie}?genre=${genreSlug}&count=${count}&page=${page}`
     );
     const data = await response.json();
-    // console.log('API response:', data);
     return MovieByGenreSchema.parse(data);
   } catch (error) {
     console.error('Movie be genres movies fetch error:', error);
@@ -78,6 +79,22 @@ export const fetchMovieDetails = async (id: number): Promise<DetailsMovie> => {
     return BaseMovieSchema.parse(data);
   } catch (error) {
     console.error('Movie dateils fetch error:', error);
+    throw error;
+  }
+};
+
+export const fetchMovieByTitle = async (
+  title: string,
+  count: number
+): Promise<MovieSearchList> => {
+  try {
+    const response = await fetch(
+      `${API_BASE_URL}${endpoints.movie}?title=${title}&count=${count}`
+    );
+    const data = await response.json();
+    return MovieSearchListSchema.parse(data);
+  } catch (error) {
+    console.error('Title movies fetch error:', error);
     throw error;
   }
 };
