@@ -1,12 +1,13 @@
 import type { FC } from 'react';
-import defaultPoster from '../assets/images/default-img.jpg';
 
-import './SearchListItem.css';
 import type { MovieSearchByTitle } from '../types/movieTypes';
 import { Rating } from '../UI/Rating';
 import { getFormattedGenres } from '../utils/getFormattedGenres';
 import { genreTranslations } from '../assets/data/genreTranslations';
 import { getCorrectTimeMovie } from '../utils/getCorrectTimeMovie';
+import defaultPoster from '../assets/images/default-img.jpg';
+
+import './SearchListItem.css';
 
 interface SearchListItemProps {
   movieSearch: MovieSearchByTitle;

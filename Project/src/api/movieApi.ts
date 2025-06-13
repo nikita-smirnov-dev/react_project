@@ -1,11 +1,15 @@
 import {
   BaseMovieSchema,
+  FavoritesMoviesSchema,
+  FavoriteToMovieSchema,
   GenreArraySchema,
   MovieByGenreSchema,
   MovieSearchListSchema,
   RandomMovieSchema,
   TopMovieListSchema,
   type DetailsMovie,
+  type FavoritesMovies,
+  type FavoriteToMovie,
   type GenreArray,
   type MovieByGenre,
   type MovieSearchList,
@@ -95,6 +99,59 @@ export const fetchMovieByTitle = async (
     return MovieSearchListSchema.parse(data);
   } catch (error) {
     console.error('Title movies fetch error:', error);
+    throw error;
+  }
+};
+
+export const fetchFavoritesMovies = async (): Promise<FavoritesMovies> => {
+  try {
+    const response = await fetch(`${API_BASE_URL}${endpoints.favorites}`, {
+      credentials: 'include',
+    });
+    const data = await response.json();
+    return FavoritesMoviesSchema.parse(data);
+  } catch (error) {
+    console.error('Favorites movies fetch error:', error);
+    throw error;
+  }
+};
+
+export const fetchAddFavoriteMovie = async (
+  movieId: number
+): Promise<FavoriteToMovie> => {
+  try {
+    const response = await fetch(`${API_BASE_URL}${endpoints.favorites}`, {
+      method: 'POST',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ id: movieId.toString() }),
+    });
+
+    const data = await response.json();
+    return FavoriteToMovieSchema.parse(data);
+  } catch (error) {
+    console.error('Add favorite movie fetch error:', error);
+    throw error;
+  }
+};
+
+export const fetchDeleteFavoriteMovie = async (
+  movieId: number
+): Promise<FavoriteToMovie> => {
+  try {
+    const response = await fetch(
+      `${API_BASE_URL}${endpoints.favorites}/${movieId}`,
+      {
+        method: 'DELETE',
+        credentials: 'include',
+      }
+    );
+    const data = await response.json();
+    return FavoriteToMovieSchema.parse(data);
+  } catch (error) {
+    console.error('Delete favorite movie fetch error:', error);
     throw error;
   }
 };

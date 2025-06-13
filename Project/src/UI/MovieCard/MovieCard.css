@@ -41,3 +41,31 @@
   background-color: var(--color-white);
   z-index: 1;
 }
+
+.movie-card__btn-close.btn-reset {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: -15px;
+  right: -20px;
+  border-radius: 30px;
+  color: var(--color-black);
+  background-color: var(--color-white);
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
+
+.movie-card__svg {
+  width: 25px;
+  height: 25px;
+}
+
+.movie-card-wrapper:hover .movie-card__btn-close {
+  opacity: 1;
+  visibility: visible;
+}

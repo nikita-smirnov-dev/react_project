@@ -1,12 +1,13 @@
 import { useEffect, useState, type ChangeEvent, type FC } from 'react';
 import { IoSearch } from 'react-icons/io5';
-
-import './Search.css';
-import { SearchListItem } from '../../SearchListItem';
 import { useQuery } from '@tanstack/react-query';
+
+import { SearchListItem } from '../../SearchListItem';
 import { fetchMovieByTitle } from '../../api/movieApi';
 import { Link, useLocation } from 'react-router-dom';
 import { DataLoader } from '../../UI/DataLoader';
+
+import './Search.css';
 
 export const Search: FC = () => {
   const [text, setText] = useState('');

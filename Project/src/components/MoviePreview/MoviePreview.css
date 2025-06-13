@@ -96,6 +96,10 @@
   height: 18px;
 }
 
+.movie-preview__favorite-svg {
+  color: var(--color-favorite-movie);
+}
+
 .movie-preview__right img {
   width: 680px;
   height: 552px;

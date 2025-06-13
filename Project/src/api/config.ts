@@ -9,4 +9,5 @@ export const endpoints = {
   user: '/user',
   profile: '/profile',
   logout: '/auth/logout',
+  favorites: '/favorites',
 };

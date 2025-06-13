@@ -3,11 +3,14 @@ import type { TopMovie } from '../../types/movieTypes';
 import defaultPoster from '../../assets/images/default-img.jpg';
 
 import './MovieCard.css';
+import { IoMdClose } from 'react-icons/io';
 
 export interface MovieCardProps {
   movie: TopMovie;
   className?: string;
   hideRaiting?: boolean;
+  hideCloseButton?: boolean;
+  onDeleteCard?: VoidFunction;
   index?: number;
 }
 
@@ -15,6 +18,8 @@ export const MovieCard: FC<MovieCardProps> = ({
   movie,
   className,
   hideRaiting = false,
+  hideCloseButton = true,
+  onDeleteCard,
   index = 1,
 }) => {
   const rating = ++index;
@@ -30,6 +35,14 @@ export const MovieCard: FC<MovieCardProps> = ({
           className={`movie-card__img ${className || ''}`}
         />
       </div>
+      {!hideCloseButton && (
+        <button
+          className="movie-card__btn-close btn-reset"
+          onClick={onDeleteCard}
+        >
+          <IoMdClose className="movie-card__svg" />
+        </button>
+      )}
     </div>
   );
 };

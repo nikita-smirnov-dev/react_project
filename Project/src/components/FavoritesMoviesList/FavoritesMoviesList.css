@@ -1,0 +1,31 @@
+.favorites-container {
+  height: 550px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  position: relative;
+}
+
+.favorites-container::-webkit-scrollbar {
+  display: none;
+}
+
+.favorites-movies {
+  padding-bottom: 100px;
+}
+
+.favorites-movies__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  color: var(--color-white);
+}
+
+.favorites-movies__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
+  /* grid-template-columns: repeat(5, 224px); */
+  column-gap: var(--spacing-40);
+  row-gap: var(--spacing-64);
+}

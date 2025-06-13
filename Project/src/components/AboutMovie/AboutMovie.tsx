@@ -1,10 +1,10 @@
 import type { FC } from 'react';
 
 import { MovieInfo } from '../MovieInfo';
-
-import './AboutMovie.css';
 import type { DetailsMovie } from '../../types/movieTypes';
 import { languageDetails } from '../../assets/data/languageMovieDetails';
+
+import './AboutMovie.css';
 
 type AboutMovieProps = Pick<
   DetailsMovie,

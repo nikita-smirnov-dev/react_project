@@ -4,6 +4,7 @@ import './Account.css';
 import type { FC } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { SettingAccount } from '../../components/SettingAccount';
+import { FetchFavoritesMoviesList } from '../../components/FavoritesMoviesList';
 
 interface AccountProps {
   userData: {
@@ -27,6 +28,7 @@ export const Account: FC<AccountProps> = ({ userData }) => {
         </MenuElement>
       </nav>
       <Routes>
+        <Route index element={<FetchFavoritesMoviesList />} />
         <Route
           path="setting"
           element={<SettingAccount userData={userData} />}
