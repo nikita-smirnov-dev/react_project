@@ -1,33 +1,40 @@
 import { QueryClientProvider } from '@tanstack/react-query';
-import './App.css';
 import { queryClient } from './api/queryClient';
-import { FetchMoviesByGenre } from './pages/MoviesByGenre';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import { FetchMoviesByGenre } from './pages/MoviesByGenre';
 import { Home } from './pages/Home';
 import MainLayout from './layout/MainLayout';
 import { Genres } from './pages/Genres';
 import { MovieDetails } from './pages/MovieDetails';
 import { AuthModalProvider } from './context/AuthModalContext';
 import { FetchAccount } from './pages/Account/FetchAccount';
+import { Footer } from './components/Footer';
+
+import './App.css';
+import { TrailerModalProvaider } from './context/TrailerModalContext';
 
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <AuthModalProvider>
-          <div className="container">
-            <Routes>
-              <Route path="/" element={<MainLayout />}>
-                <Route index element={<Home />} />
-                <Route path="genres">
-                  <Route index element={<Genres />} />
-                  <Route path=":genreSlug" element={<FetchMoviesByGenre />} />
+          <TrailerModalProvaider>
+            <div className="container">
+              <Routes>
+                <Route path="/" element={<MainLayout />}>
+                  <Route index element={<Home />} />
+                  <Route path="genres">
+                    <Route index element={<Genres />} />
+                    <Route path=":genreSlug" element={<FetchMoviesByGenre />} />
+                  </Route>
+                  <Route path="about/:id" element={<MovieDetails />} />
+                  <Route path="account/*" element={<FetchAccount />} />
                 </Route>
-                <Route path="about/:id" element={<MovieDetails />} />
-                <Route path="account/*" element={<FetchAccount />} />
-              </Route>
-            </Routes>
-          </div>
+              </Routes>
+            </div>
+            <Footer />
+          </TrailerModalProvaider>
         </AuthModalProvider>
       </BrowserRouter>
     </QueryClientProvider>

@@ -12,8 +12,12 @@ import { fetchFavoritesMovies } from '../../api/movieApi';
 import { useAuthModal } from '../../hooks/useAuthModal';
 import defaultPoster from '../../assets/images/default-img.jpg';
 import type { RandomMovie } from '../../types/movieTypes';
+import { Modal } from '../Modal';
 
 import './MoviePreview.css';
+import { useNavigate } from 'react-router-dom';
+import { FetchMovieTrailer } from '../MovieTrailer';
+import { useTrailerModal } from '../../hooks/useTrailerModal';
 
 interface MoviePreviewProps {
   movie: RandomMovie;
@@ -28,10 +32,15 @@ export const MoviePreview: FC<MoviePreviewProps> = ({
   showUpdateButton = true,
   onUpdateClick,
 }) => {
+  const { isModalTrailerOpen, openModalTrailer, closeModalTrailer } =
+    useTrailerModal();
   const [isFavorite, setIsFavorite] = useState(false);
   const { addFavoriteMutation, deleteFavoriteMutation } =
     useFavoriteMovieActions();
   const { openModal } = useAuthModal();
+  const [showFullDescription, setShowFullDescription] = useState(false);
+  const isLongText = movie.plot && movie.plot.length > 150;
+  const navigate = useNavigate();
 
   const { data: favorites } = useQuery({
     queryFn: fetchFavoritesMovies,
@@ -44,7 +53,6 @@ export const MoviePreview: FC<MoviePreviewProps> = ({
       const isMovieInFavorite = favorites.some(
         (favorite) => favorite.id === movie.id
       );
-      console.log(isMovieInFavorite);
       setIsFavorite(isMovieInFavorite);
     } else {
       setIsFavorite(false);
@@ -82,6 +90,10 @@ export const MoviePreview: FC<MoviePreviewProps> = ({
     }
   };
 
+  const handleAboutMovie = () => {
+    navigate(`/about/${movie.id}`);
+  };
+
   return (
     <div className="movie-preview">
       <div className="movie-preview__left">
@@ -102,14 +114,42 @@ export const MoviePreview: FC<MoviePreviewProps> = ({
         </h1>
         <div className="movie-preview__description-container">
           <p className="movie-preview__left-descr">{movie.plot}</p>
+          {isLongText && (
+            <button
+              className="movie-preview__read-more btn-reset"
+              onClick={() => setShowFullDescription(true)}
+            >
+              Читать полностью
+            </button>
+          )}
+          {showFullDescription && (
+            <Modal
+              isOpen={showFullDescription}
+              onClose={() => setShowFullDescription(false)}
+            >
+              <div className="movie-preview__descr-container">
+                <p className="movie-preview__descr">{movie.plot}</p>
+              </div>
+            </Modal>
+          )}
         </div>
         <div className="movie-preview__buttons-container">
           <div className="movie-preview__trailer-container">
-            <Button className="movie-preview__trailer">Трейлер</Button>
+            <Button
+              className="movie-preview__trailer"
+              onClick={() => openModalTrailer()}
+            >
+              Трейлер
+            </Button>
           </div>
           <div className="movie-preview__action-buttons ">
             {showFilmButton && (
-              <Button className="movie-preview__film">О фильме</Button>
+              <Button
+                className="movie-preview__film"
+                onClick={handleAboutMovie}
+              >
+                О фильме
+              </Button>
             )}
 
             <Button
@@ -133,6 +173,11 @@ export const MoviePreview: FC<MoviePreviewProps> = ({
       <div className="movie-preview__right">
         <img src={movie.posterUrl || defaultPoster} alt={movie.title} />
       </div>
+      <Modal
+        isOpen={isModalTrailerOpen}
+        onClose={closeModalTrailer}
+        children={<FetchMovieTrailer movieId={movie.id} />}
+      />
     </div>
   );
 };

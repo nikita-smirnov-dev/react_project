@@ -3,7 +3,6 @@ import { useQuery } from '@tanstack/react-query';
 import { Outlet, useNavigate } from 'react-router-dom';
 
 import { Header } from '../components/Header';
-import { Footer } from '../components/Footer';
 import { useAuthModal } from '../hooks/useAuthModal';
 import { Modal } from '../components/Modal';
 import { Auth } from '../components/Auth';
@@ -39,7 +38,6 @@ const MainLayout: FC = () => {
         onLoginClick={meQuery.data?.name ? handleOprnAccount : openModal}
       />
       <Outlet />
-      <Footer />
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <Auth closeModal={handleClose} />
       </Modal>

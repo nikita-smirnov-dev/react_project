@@ -56,6 +56,26 @@
   -webkit-box-orient: vertical;
 }
 
+.movie-preview__read-more {
+  font-size: var(--font-size-18);
+  color: var(--color-white);
+}
+
+.movie-preview__descr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  margin: 0;
+  font-size: var(--font-size-18);
+}
+
+.movie-preview__descr-container {
+  padding: 20px;
+  border-radius: 24px;
+  background-color: var(--color-white);
+}
+
 .movie-preview__buttons-container {
   display: flex;
   align-items: center;

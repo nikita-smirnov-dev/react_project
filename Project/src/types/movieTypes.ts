@@ -127,3 +127,13 @@ export const FavoriteToMovieSchema = z
   .partial();
 
 export type FavoriteToMovie = z.infer<typeof FavoriteToMovieSchema>;
+
+// Trailer schema
+
+export const MovieVideoTrailerSchema = BaseMovieSchema.pick({
+  id: true,
+  trailerUrl: true,
+  trailerYouTubeId: true,
+});
+
+export type MovieVideoTrailer = z.infer<typeof MovieVideoTrailerSchema>;

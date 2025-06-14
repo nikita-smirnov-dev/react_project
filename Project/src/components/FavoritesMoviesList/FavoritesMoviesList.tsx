@@ -20,7 +20,7 @@ export const FavoritesMoviesList: FC<FavoritesMoviesProps> = ({
   };
 
   return (
-    <div className="favorites-container">
+    <div className="favorites-container ">
       <div className="favorites-movies">
         {!moviesFavorites.length && (
           <h2 className="favorites-movies__title">
