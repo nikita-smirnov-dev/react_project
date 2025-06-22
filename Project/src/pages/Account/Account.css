@@ -18,5 +18,22 @@
 }
 
 .account-item__svg {
-  margin-right: 10px;
+  margin-right: var(--spacing-10);
+}
+
+@media (max-width: 768px) {
+  .account-title {
+    margin-bottom: var(--spacing-40);
+  }
+
+  .account-menu {
+    gap: var(--spacing-24);
+    margin-bottom: var(--spacing-60);
+  }
+}
+
+@media (max-width: 576px) {
+  .account-menu {
+    margin-bottom: var(--spacing-40);
+  }
 }

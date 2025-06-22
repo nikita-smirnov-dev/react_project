@@ -48,3 +48,78 @@
 .movies-genres__btn {
   background-color: var(--color-blue-button);
 }
+
+@media (max-width: 992px) {
+  .movies-genres {
+    margin-bottom: var(--spacing-90);
+  }
+
+  .movies-genres__list.list-reset {
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: var(--spacing-40);
+  }
+}
+
+@media (max-width: 768px) {
+  .movies-genres {
+    margin-bottom: var(--spacing-60);
+  }
+
+  .movies-genres__block {
+    margin-bottom: var(--spacing-40);
+  }
+
+  .movies-genres__svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .movies-genres__list.list-reset {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .movies-genres__button:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .movies-genres {
+    margin-bottom: var(--spacing-40);
+  }
+
+  .movies-genres__title {
+    font-size: var(--font-size-24);
+  }
+
+  .movies-genres__button {
+    margin-right: var(--spacing-10);
+  }
+
+  .movies-genres__svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .movies-genres__list.list-reset {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: var(--spacing-24);
+    margin-bottom: var(--spacing-40);
+  }
+
+  .movies-genres__list.list-reset .movie-card {
+    width: 100%;
+    height: 780px;
+  }
+
+  .movies-genres__btn {
+    width: 100%;
+    background-color: var(--color-raiting-top-movie);
+  }
+}
+
+@media (max-width: 375px) {
+  .movies-genres__list.list-reset .movie-card {
+    height: 502px;
+  }
+}

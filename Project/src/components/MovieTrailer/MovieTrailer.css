@@ -3,3 +3,24 @@
   height: 540px;
   position: relative;
 }
+
+@media (max-width: 812px) and (orientation: landscape) {
+  .player-container {
+    width: 660px;
+    height: 375px;
+  }
+}
+
+@media (max-width: 576px) and (orientation: portrait) {
+  .player-container {
+    width: 576px;
+    height: 212px;
+  }
+}
+
+@media (max-width: 576px) and (orientation: portrait) {
+  .player-container {
+    width: 375px;
+    height: 212px;
+  }
+}

@@ -26,7 +26,10 @@ export const AboutMovie: FC<MovieProps> = ({ movieInfo }) => {
       <h2 className="about-movie__title section-title">О фильме</h2>
       <MovieInfo
         description="Язык оригинала"
-        value={languageDetails[movieInfo.language ?? 'отсутствует']}
+        value={
+          languageDetails[movieInfo.language ?? 'отсутствует'] ??
+          movieInfo.language
+        }
       />
       <MovieInfo
         description="Бюджет"

@@ -14,3 +14,15 @@
   border-radius: 8px;
   color: var(--color-social-footer);
 }
+
+@media (max-width: 576px) {
+  .social-icons__link {
+    width: 24px;
+    height: 24px;
+  }
+
+  .social-icons__svg {
+    width: 13px;
+    height: 13px;
+  }
+}

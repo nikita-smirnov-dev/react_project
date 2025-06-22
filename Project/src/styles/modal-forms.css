@@ -67,3 +67,15 @@
   color: var(--color-black);
   background-color: transparent;
 }
+
+@media (max-width: 768px) {
+  .modal-logo {
+    margin-bottom: var(--spacing-32);
+  }
+}
+
+@media (max-width: 576px) {
+  .modal {
+    width: 295px;
+  }
+}

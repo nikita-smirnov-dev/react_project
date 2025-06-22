@@ -111,6 +111,7 @@ export const fetchFavoritesMovies = async (): Promise<FavoritesMovies> => {
       credentials: 'include',
     });
     const data = await response.json();
+    // console.log('API response:', data);
     return FavoritesMoviesSchema.parse(data);
   } catch (error) {
     console.error('Favorites movies fetch error:', error);

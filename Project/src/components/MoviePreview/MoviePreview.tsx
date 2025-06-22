@@ -11,7 +11,7 @@ import { useFavoriteMovieActions } from '../../hooks/useFavoriteMovieActions';
 import { fetchFavoritesMovies } from '../../api/movieApi';
 import { useAuthModal } from '../../hooks/useAuthModal';
 import defaultPoster from '../../assets/images/default-img.jpg';
-import type { RandomMovie } from '../../types/movieTypes';
+import type { DetailsMovie, RandomMovie } from '../../types/movieTypes';
 import { Modal } from '../Modal';
 
 import './MoviePreview.css';
@@ -20,10 +20,11 @@ import { FetchMovieTrailer } from '../MovieTrailer';
 import { useTrailerModal } from '../../hooks/useTrailerModal';
 
 interface MoviePreviewProps {
-  movie: RandomMovie;
+  movie: RandomMovie | DetailsMovie;
   showFilmButton?: boolean;
   showUpdateButton?: boolean;
   onUpdateClick?: VoidFunction;
+  isDetailsPage?: boolean;
 }
 
 export const MoviePreview: FC<MoviePreviewProps> = ({
@@ -31,6 +32,7 @@ export const MoviePreview: FC<MoviePreviewProps> = ({
   showFilmButton = true,
   showUpdateButton = true,
   onUpdateClick,
+  isDetailsPage = false,
 }) => {
   const { isModalTrailerOpen, openModalTrailer, closeModalTrailer } =
     useTrailerModal();
@@ -133,7 +135,11 @@ export const MoviePreview: FC<MoviePreviewProps> = ({
             </Modal>
           )}
         </div>
-        <div className="movie-preview__buttons-container">
+        <div
+          className={`movie-preview__buttons-container ${
+            isDetailsPage ? 'movie-preview__buttons--details' : ''
+          }`}
+        >
           <div className="movie-preview__trailer-container">
             <Button
               className="movie-preview__trailer"
@@ -142,7 +148,11 @@ export const MoviePreview: FC<MoviePreviewProps> = ({
               Трейлер
             </Button>
           </div>
-          <div className="movie-preview__action-buttons ">
+          <div
+            className={`movie-preview__action-buttons ${
+              isDetailsPage ? 'movie-preview__action-buttons--details' : ''
+            }`}
+          >
             {showFilmButton && (
               <Button
                 className="movie-preview__film"

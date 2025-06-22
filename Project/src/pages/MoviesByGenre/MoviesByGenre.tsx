@@ -1,13 +1,13 @@
 import type { FC } from 'react';
 import { IoIosArrowBack } from 'react-icons/io';
+import { Link, useParams } from 'react-router-dom';
 
 import type { MovieByGenre } from '../../types/movieTypes';
 import { MovieCard } from '../../UI/MovieCard';
 import { Button } from '../../UI/Button';
+import { genreTranslations } from '../../assets/data/genreTranslations';
 
 import './MoviesByGenre.css';
-import { Link, useParams } from 'react-router-dom';
-import { genreTranslations } from '../../assets/data/genreTranslations';
 
 interface MoviesByGenresProps {
   movieListByGenre: MovieByGenre;
@@ -49,7 +49,11 @@ export const MoviesByGenre: FC<MoviesByGenresProps> = ({
         </ul>
         <div className="movies-genres__btn-wrapper">
           {movieListByGenre.length < 50 && (
-            <Button className="movies-genres__btn" onClick={onloadMore}>
+            <Button
+              className="movies-genres__btn"
+              onClick={onloadMore}
+              type="button"
+            >
               Показать ещё
             </Button>
           )}

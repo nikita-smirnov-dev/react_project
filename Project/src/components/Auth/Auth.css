@@ -1,5 +1,12 @@
 .auth {
-  padding: 64px 40px;
+  padding: var(--spacing-64) var(--spacing-40);
   background-color: var(--color-white);
   border-radius: 24px;
+}
+
+@media (max-width: 768px) {
+  .auth {
+    padding: var(--spacing-64) var(--spacing-20) var(--spacing-32)
+      var(--spacing-20);
+  }
 }

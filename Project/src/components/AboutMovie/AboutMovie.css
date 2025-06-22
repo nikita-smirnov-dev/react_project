@@ -6,3 +6,13 @@
   margin: 0;
   margin-bottom: var(--spacing-64);
 }
+
+@media (max-width: 768px) {
+  .about-movie {
+    margin-bottom: var(--spacing-40);
+  }
+
+  .about-movie__title {
+    margin-bottom: var(--spacing-40);
+  }
+}

@@ -45,3 +45,14 @@
   font-weight: var(--font-weight-bold);
   color: var(--color-white);
 }
+
+@media (max-width: 576px) {
+  .setting-account__text {
+    font-size: var(--font-size-14);
+    color: var(--color-gradient-gray);
+  }
+
+  .setting-account__fio {
+    font-size: var(--font-size-18);
+  }
+}

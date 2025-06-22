@@ -16,3 +16,49 @@
   column-gap: var(--spacing-40);
   row-gap: var(--spacing-64);
 }
+
+@media (max-width: 992px) {
+  .top-movies {
+    position: relative;
+    overflow: visible;
+    margin-bottom: 90px;
+  }
+
+  .top-movies .swiper,
+  .top-movies .swiper-wrapper,
+  .top-movies .swiper-slide {
+    overflow: visible;
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-movies {
+    margin-bottom: var(--spacing-60);
+  }
+
+  .top-movies__title {
+    margin-bottom: var(--spacing-40);
+    font-size: var(--font-size-32);
+  }
+}
+
+@media (max-width: 576px) {
+  .top-movies__title {
+    font-size: var(--font-size-24);
+  }
+
+  .top-movies {
+    margin-bottom: var(--spacing-32);
+  }
+
+  .top-movies__swiper-container {
+    position: relative;
+    width: 100%;
+    overflow: visible;
+  }
+}

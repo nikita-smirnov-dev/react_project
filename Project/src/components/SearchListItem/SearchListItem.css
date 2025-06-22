@@ -48,3 +48,25 @@
   font-size: var(--font-size-18);
   color: var(--color-white);
 }
+
+@media (max-width: 768px) {
+  .search-content__img {
+    width: 80px;
+    height: 115px;
+  }
+}
+
+@media (max-width: 576px) {
+  .search-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-content__img {
+    width: 157px;
+    height: 206px;
+  }
+  .search-content__right-info {
+    flex-wrap: wrap;
+  }
+}

@@ -1,17 +1,27 @@
 import { useEffect, useState, type ChangeEvent, type FC } from 'react';
 import { IoSearch } from 'react-icons/io5';
 import { useQuery } from '@tanstack/react-query';
-
-import { SearchListItem } from '../../SearchListItem';
-import { fetchMovieByTitle } from '../../api/movieApi';
+import { IoMdClose } from 'react-icons/io';
 import { Link, useLocation } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import { SearchListItem } from '../SearchListItem';
+import { fetchMovieByTitle } from '../../api/movieApi';
 import { DataLoader } from '../../UI/DataLoader';
+import { useMediaQuery } from '../../hooks/useMediaQuery';
 
 import './Search.css';
+import 'swiper/css';
 
-export const Search: FC = () => {
+interface SearchProps {
+  showCloseIcon?: boolean;
+  onClose?: VoidFunction;
+}
+
+export const Search: FC<SearchProps> = ({ showCloseIcon = false, onClose }) => {
   const [text, setText] = useState('');
   const [openList, setOpenList] = useState(false);
+  const isMobile = useMediaQuery();
 
   const location = useLocation();
 
@@ -37,6 +47,12 @@ export const Search: FC = () => {
     }
   }
 
+  const handleSearchClose = () => {
+    if (onClose) {
+      onClose();
+    }
+  };
+
   return (
     <>
       <form className="search">
@@ -48,6 +64,9 @@ export const Search: FC = () => {
           value={text}
           onChange={handleInputChange}
         />
+        {showCloseIcon && (
+          <IoMdClose className="search-close" onClick={handleSearchClose} />
+        )}
       </form>
       {openList && (
         <div className="search-block">
@@ -61,6 +80,30 @@ export const Search: FC = () => {
             <ul className="search-list list-reset">
               {searchMovie.length === 0 ? (
                 <li className="search-status">Ничего не найдено</li>
+              ) : isMobile ? (
+                <div className="search__swiper-container">
+                  <Swiper
+                    slidesPerView={1.3}
+                    spaceBetween={16}
+                    initialSlide={0}
+                    grabCursor={true}
+                    cssMode={false}
+                    className="search__swiper"
+                  >
+                    {searchMovie.map((movie) => (
+                      <SwiperSlide key={movie.id}>
+                        <li className="search-item" key={movie.id}>
+                          <Link
+                            className="search-item__link"
+                            to={`/about/${movie.id}`}
+                          >
+                            <SearchListItem movieSearch={movie} />
+                          </Link>
+                        </li>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                </div>
               ) : (
                 searchMovie.map((movie) => (
                   <li className="search-item" key={movie.id}>

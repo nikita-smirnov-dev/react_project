@@ -1,4 +1,4 @@
-.favorites-container {
+/* .favorites-container {
   position: relative;
   height: 550px;
   overflow-y: auto;
@@ -7,7 +7,7 @@
 
 .favorites-container::-webkit-scrollbar {
   display: none;
-}
+} */
 
 .favorites-movies {
   padding-bottom: 100px;
@@ -27,4 +27,28 @@
   /* grid-template-columns: repeat(5, 224px); */
   column-gap: var(--spacing-40);
   row-gap: var(--spacing-64);
+}
+
+@media (max-width: 768px) {
+  .favorites-movies {
+    padding-bottom: 0px;
+    margin-bottom: var(--spacing-60);
+  }
+
+  .favorites-movies__swiper-container {
+    position: relative;
+    width: 100%;
+    overflow: visible;
+  }
+
+  .favorites-movies .swiper,
+  .favorites-movies .swiper-wrapper,
+  .favorites-movies .swiper-slide {
+    overflow: visible;
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
 }

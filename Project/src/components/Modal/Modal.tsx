@@ -7,12 +7,22 @@ interface ModalProps {
   children: React.ReactNode;
   isOpen: boolean;
   onClose?: VoidFunction;
+  isTrailerPage?: boolean;
 }
 
-export const Modal: FC<ModalProps> = ({ children, isOpen, onClose }) => {
+export const Modal: FC<ModalProps> = ({
+  children,
+  isOpen,
+  onClose,
+  isTrailerPage = false,
+}) => {
   return (
     isOpen && (
-      <div className="modal-overlay">
+      <div
+        className={`modal-overlay ${
+          isTrailerPage ? 'modal-overlay__trailer' : ''
+        }`}
+      >
         <div className="modal-content">
           <button
             className="modal-close btn-reset"

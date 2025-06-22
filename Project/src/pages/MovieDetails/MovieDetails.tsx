@@ -1,12 +1,14 @@
 import type { FC } from 'react';
-import { MoviePreview } from '../../components/MoviePreview';
-import { AboutMovie } from '../../components/AboutMovie';
-import './MovieDetails.css';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
+
+import { MoviePreview } from '../../components/MoviePreview';
+import { AboutMovie } from '../../components/AboutMovie';
 import { fetchMovieDetails } from '../../api/movieApi';
 import { DataLoader } from '../../UI/DataLoader';
 import { ErrorMessage } from '../../UI/ErrorMessage';
+
+import './MovieDetails.css';
 
 export const MovieDetails: FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -35,6 +37,7 @@ export const MovieDetails: FC = () => {
               movie={data}
               showFilmButton={false}
               showUpdateButton={false}
+              isDetailsPage={true}
             />
           </section>
           <section>

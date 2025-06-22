@@ -14,3 +14,33 @@
   column-gap: var(--spacing-40);
   row-gap: var(--spacing-64);
 }
+
+@media (max-width: 992px) {
+  .genres {
+    margin-bottom: 90px;
+  }
+
+  .genres__list {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .genres {
+    margin-bottom: var(--spacing-60);
+  }
+
+  .genres__title {
+    margin-bottom: var(--spacing-40);
+  }
+}
+
+@media (max-width: 576px) {
+  .genres {
+    margin-bottom: var(--spacing-40);
+  }
+
+  .genres__list {
+    row-gap: var(--spacing-24);
+  }
+}
