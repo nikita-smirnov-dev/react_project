@@ -105,7 +105,11 @@ export const MoviePreview: FC<MoviePreviewProps> = ({
           </div>
           <span className="movie-preview__left-year">{movie.releaseYear}</span>
           <span className="movie-preview__left-genre">
-            {getFormattedGenres(movie.genres, genreTranslations).join(' ')}
+            {getFormattedGenres(
+              movie.genres,
+              genreTranslations,
+              window.innerWidth <= 375 ? 1 : undefined
+            ).join(' ')}
           </span>
           <span className="movie-preview__left-runtime">
             {getCorrectTimeMovie(movie.runtime)}
@@ -165,6 +169,11 @@ export const MoviePreview: FC<MoviePreviewProps> = ({
             <Button
               className="movie-preview__favorite"
               onClick={handleToggleFavorite}
+              aria-label={
+                isFavorite
+                  ? 'Удалить фильм из избранного'
+                  : 'Добавить фильм в избранное'
+              }
             >
               {isFavorite ? (
                 <RiHeart3Fill className="movie-preview__favorite-svg" />
@@ -173,7 +182,11 @@ export const MoviePreview: FC<MoviePreviewProps> = ({
               )}
             </Button>
             {showUpdateButton && (
-              <Button className="movie-preview__update" onClick={onUpdateClick}>
+              <Button
+                className="movie-preview__update"
+                onClick={onUpdateClick}
+                aria-label="Следующий фильм"
+              >
                 <RiLoopRightLine className="movie-preview__update-svg" />
               </Button>
             )}

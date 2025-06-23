@@ -56,3 +56,5 @@ export const MovieDetails: FC = () => {
       );
   }
 };
+
+export default MovieDetails;

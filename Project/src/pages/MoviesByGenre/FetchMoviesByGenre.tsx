@@ -69,3 +69,5 @@ export const FetchMoviesByGenre = () => {
       );
   }
 };
+
+export default FetchMoviesByGenre;

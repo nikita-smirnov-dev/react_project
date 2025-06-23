@@ -32,7 +32,7 @@ export const MoviesByGenre: FC<MoviesByGenresProps> = ({
             relative="path"
             aria-label="Вернуться к списку жанров"
           >
-            <IoIosArrowBack className="movies-genres__svg" />
+            <IoIosArrowBack className="movies-genres__svg" aria-hidden="true" />
           </Link>
           <h1 className="movies-genres__title section-title">
             {genreTitle ? genreTitle : genreSlug}

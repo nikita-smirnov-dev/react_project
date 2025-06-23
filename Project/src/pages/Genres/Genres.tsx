@@ -64,3 +64,5 @@ export const Genres = () => {
       );
   }
 };
+
+export default Genres;

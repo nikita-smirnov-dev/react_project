@@ -14,3 +14,5 @@ export const Home: FC = () => {
     </main>
   );
 };
+
+export default Home;

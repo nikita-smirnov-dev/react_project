@@ -31,3 +31,5 @@ export const FetchAccount = () => {
       );
   }
 };
+
+export default FetchAccount;

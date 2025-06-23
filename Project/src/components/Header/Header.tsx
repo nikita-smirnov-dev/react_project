@@ -29,17 +29,22 @@ export const Header: FC<HeaderProps> = ({ onLoginClick, userName }) => {
       {isMobile ? (
         <>
           <Logo className="header-logo" color="white" />
-          <nav className="header-nav__mobail">
+          <nav className="header-nav__mobail" aria-label="Мобильная навигация">
             <MenuElement className="header-nav__mobail-genres" path={'/genres'}>
-              <RiApps2Line className="header-nav__mobail-svg" />
+              <RiApps2Line
+                className="header-nav__mobail-svg"
+                aria-label="Открыть список жанров"
+              />
             </MenuElement>
             <IoSearch
               className="header-nav__mobail-svg "
               onClick={handleSearchOpen}
+              aria-label="Открыть поиск"
             />
             <RiUserLine
               className="header-nav__mobail-svg"
               onClick={onLoginClick}
+              aria-label="Войти в аккаунт"
             />
           </nav>
           {showSearch && (

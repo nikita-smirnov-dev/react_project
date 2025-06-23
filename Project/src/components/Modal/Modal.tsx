@@ -29,7 +29,7 @@ export const Modal: FC<ModalProps> = ({
             aria-label="Закрыть модальное окно"
             onClick={onClose}
           >
-            <IoMdClose className="modal-close_svg" />
+            <IoMdClose className="modal-close_svg" aria-hidden="true" />
           </button>
           {children}
         </div>

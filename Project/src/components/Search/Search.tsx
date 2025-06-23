@@ -65,7 +65,11 @@ export const Search: FC<SearchProps> = ({ showCloseIcon = false, onClose }) => {
           onChange={handleInputChange}
         />
         {showCloseIcon && (
-          <IoMdClose className="search-close" onClick={handleSearchClose} />
+          <IoMdClose
+            className="search-close"
+            onClick={handleSearchClose}
+            aria-label="Закрыть поиск"
+          />
         )}
       </form>
       {openList && (
