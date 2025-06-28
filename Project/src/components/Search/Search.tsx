@@ -100,6 +100,7 @@ export const Search: FC<SearchProps> = ({ showCloseIcon = false, onClose }) => {
                           <Link
                             className="search-item__link"
                             to={`/about/${movie.id}`}
+                            onClick={handleSearchClose}
                           >
                             <SearchListItem movieSearch={movie} />
                           </Link>
@@ -114,6 +115,7 @@ export const Search: FC<SearchProps> = ({ showCloseIcon = false, onClose }) => {
                     <Link
                       className="search-item__link"
                       to={`/about/${movie.id}`}
+                      onClick={handleSearchClose}
                     >
                       <SearchListItem movieSearch={movie} />
                     </Link>

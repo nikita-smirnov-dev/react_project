@@ -36,20 +36,36 @@ export const Header: FC<HeaderProps> = ({ onLoginClick, userName }) => {
                 aria-label="Открыть список жанров"
               />
             </MenuElement>
-            <IoSearch
-              className="header-nav__mobail-svg "
+            <button
+              className="header-nav__mobail-btn btn-reset"
               onClick={handleSearchOpen}
               aria-label="Открыть поиск"
-            />
-            <RiUserLine
-              className="header-nav__mobail-svg"
+            >
+              <IoSearch className="header-nav__mobail-svg" aria-hidden="true" />
+            </button>
+            <button
+              className="header-nav__mobail-btn btn-reset"
               onClick={onLoginClick}
               aria-label="Войти в аккаунт"
-            />
+            >
+              <RiUserLine
+                className="header-nav__mobail-svg"
+                aria-hidden="true"
+              />
+            </button>
           </nav>
-          {showSearch && (
-            <Search showCloseIcon={true} onClose={() => setShowSearch(false)} />
-          )}
+          <div
+            className={`mobile-search-overlay  ${
+              showSearch ? 'mobile-search-overlay--visible' : ''
+            }`}
+          >
+            {showSearch && (
+              <Search
+                showCloseIcon={true}
+                onClose={() => setShowSearch(false)}
+              />
+            )}
+          </div>
         </>
       ) : (
         <>

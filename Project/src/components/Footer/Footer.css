@@ -9,7 +9,6 @@
     linear-gradient(180deg, rgba(15, 54, 128, 0.7) 0%, rgb(50, 64, 88) 0%);
   z-index: 10;
 }
-/* #4e3c77, 76, 55, 102, 0.7 */
 
 .footer__container.container {
   display: flex;

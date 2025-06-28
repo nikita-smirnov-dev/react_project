@@ -4,9 +4,6 @@
 }
 
 .movie-preview__left {
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* height: 552px; */
   max-width: 600px;
   padding-top: var(--spacing-70);
   margin-right: var(--spacing-20);

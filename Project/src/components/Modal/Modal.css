@@ -13,6 +13,19 @@
   overflow-y: auto;
   overflow-x: hidden;
   z-index: 1000;
+  /* opacity: 0;
+  visibility: hidden; */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.modal-overlay--hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-overlay.modal-overlay--visible {
+  opacity: 1;
+  visibility: visible;
 }
 
 .modal-content {

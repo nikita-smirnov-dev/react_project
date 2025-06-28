@@ -1,0 +1,33 @@
+.not-found__content {
+  height: 500px;
+  padding: var(--spacing-30) 0;
+}
+
+.not-found__title,
+.not-found__subtitle {
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.not-found__subtitle {
+  color: var(--color-white);
+}
+
+.not-found__text {
+  margin: 0;
+  margin-bottom: 50px;
+}
+
+.not-found__btn {
+  background-color: var(--color-blue-button);
+}
+
+@media (max-width: 576px) {
+  .not-found__title {
+    font-size: var(--font-size-24);
+  }
+
+  .not-found__text.text {
+    font-size: var(--font-size-14);
+  }
+}

@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import { PageLoader } from '../../UI/PageLoader';
 import MainLayout from '../../layout/MainLayout';
+import { NotFound } from '../NotFound';
 
 const LazyHomePage = lazy(() => import('../../pages/Home/Home'));
 const LazyGenresPage = lazy(() => import('../../pages/Genres/Genres'));
@@ -60,6 +61,7 @@ export const AppRoutes = () => {
             </Suspense>
           }
         />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );

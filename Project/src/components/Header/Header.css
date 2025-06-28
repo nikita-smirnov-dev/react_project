@@ -31,6 +31,11 @@
     cursor: pointer;
   }
 
+  .header-nav__mobail-btn {
+    padding: 0;
+    color: white;
+  }
+
   .header-nav__mobail-svg {
     width: 30px;
     height: 30px;
@@ -38,6 +43,25 @@
 
   .header-nav__mobail-genres:active {
     border-bottom: none;
+  }
+
+  .mobile-search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    padding: var(--spacing-20) var(--spacing-40);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .mobile-search-overlay--visible {
+    opacity: 1;
+    visibility: visible;
   }
 }
 
@@ -59,5 +83,9 @@
   .header-nav__mobail-svg {
     width: 24px;
     height: 24px;
+  }
+
+  .mobile-search-overlay {
+    padding: var(--spacing-16) var(--spacing-20);
   }
 }
