@@ -1,5 +1,4 @@
 .button {
-  /* height: 56px; */
   padding: var(--spacing-16) var(--spacing-48);
   border-radius: 28px;
   font-weight: 700;

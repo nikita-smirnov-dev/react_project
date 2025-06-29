@@ -21,9 +21,6 @@ import {
 import { API_BASE_URL, endpoints } from './config';
 
 export const fetchRandomMovie = async (): Promise<RandomMovie> => {
-  // return fetch(`${API_BASE_URL}${endpoints.randomMovie}`)
-  //   .then((res) => res.json())
-  //   .then((data) => RandomMovieSchema.parse(data));
   try {
     const response = await fetch(`${API_BASE_URL}${endpoints.randomMovie}`);
 
@@ -43,7 +40,6 @@ export const fetchTopMovie = async (): Promise<TopMovieList> => {
   try {
     const response = await fetch(`${API_BASE_URL}${endpoints.topMovie}`);
     const data = await response.json();
-    // console.log('API response:', data);
     return TopMovieListSchema.parse(data);
   } catch (error) {
     console.error('Top movies fetch error:', error);
@@ -111,7 +107,6 @@ export const fetchFavoritesMovies = async (): Promise<FavoritesMovies> => {
       credentials: 'include',
     });
     const data = await response.json();
-    // console.log('API response:', data);
     return FavoritesMoviesSchema.parse(data);
   } catch (error) {
     console.error('Favorites movies fetch error:', error);

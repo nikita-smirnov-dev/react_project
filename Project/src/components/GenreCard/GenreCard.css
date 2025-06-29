@@ -1,6 +1,5 @@
 .card-genre {
   position: relative;
-  /* max-width: 290px; */
   width: 100%;
   height: 304px;
   border: 1px solid var(--color-border-card);

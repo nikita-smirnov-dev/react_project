@@ -1,4 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
+import { Link } from 'react-router-dom';
 
 import { GenreCard } from '../../components/GenreCard';
 import { fetchMovieGenres } from '../../api/movieApi';
@@ -9,7 +10,6 @@ import { DataLoader } from '../../UI/DataLoader';
 import { ErrorMessage } from '../../UI/ErrorMessage';
 
 import './Genres.css';
-import { Link } from 'react-router-dom';
 
 export const Genres = () => {
   const {

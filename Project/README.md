@@ -1,54 +1,58 @@
-# React + TypeScript + Vite
+# Movie App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Веб-приложение для просмотра информации о фильмах с возможностью добавления в избранное, просмотра трейлеров и детальной информации.
 
-Currently, two official plugins are available:
+## Функциональность
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Просмотр каталога фильмов
+- Поиск фильмов по названию
+- Добавление фильмов в избранное
+- Просмотр трейлеров
+- Адаптивный дизайн
+- Рейтинг фильма
+- Детальная информация о фильмах
 
-## Expanding the ESLint configuration
+## Технологии
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Frontend:** React 19, TypeScript
+- **Стилизация:** CSS Modules / Styled Components
+- **Состояние:** React Query, Context API
+- **Роутинг:** React Router v6
+- **API:** The Movie Database (TMDB)
+- **Иконки:** React Icons
+- **Сборка:** Vite
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Установка и запуск
+
+### Предварительные требования
+
+- Node.js (версия 16 или выше)
+- npm или yarn
+
+### Установка зависимостей
+
+```bash
+npm install
+# или
+yarn install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Запуск в режиме разработки
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm run dev
+# или
+yarn start
 ```
+
+Приложение откроется по адресу [http://localhost:5173](http://localhost:5173)
+
+### Сборка для продакшена
+
+```bash
+npm run build
+# или
+yarn build
+```
+
+Приложение использует [The Movie Database API](https://cinemaguide.skillbox.cc/) для получения данных о фильмах.

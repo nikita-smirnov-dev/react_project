@@ -1,6 +1,7 @@
 import { useEffect, useState, type FC } from 'react';
 import { RiHeart3Fill, RiHeart3Line, RiLoopRightLine } from 'react-icons/ri';
 import { useQuery } from '@tanstack/react-query';
+import { useNavigate } from 'react-router-dom';
 
 import { Button } from '../../UI/Button';
 import { Rating } from '../../UI/Rating';
@@ -10,14 +11,14 @@ import { getCorrectTimeMovie } from '../../utils/getCorrectTimeMovie';
 import { useFavoriteMovieActions } from '../../hooks/useFavoriteMovieActions';
 import { fetchFavoritesMovies } from '../../api/movieApi';
 import { useAuthModal } from '../../hooks/useAuthModal';
-import defaultPoster from '../../assets/images/default-img.jpg';
 import type { DetailsMovie, RandomMovie } from '../../types/movieTypes';
 import { Modal } from '../Modal';
+import defaultPoster from '../../assets/images/default-img.jpg';
 
-import './MoviePreview.css';
-import { useNavigate } from 'react-router-dom';
 import { FetchMovieTrailer } from '../MovieTrailer';
 import { useTrailerModal } from '../../hooks/useTrailerModal';
+
+import './MoviePreview.css';
 
 interface MoviePreviewProps {
   movie: RandomMovie | DetailsMovie;
@@ -99,45 +100,49 @@ export const MoviePreview: FC<MoviePreviewProps> = ({
   return (
     <div className="movie-preview">
       <div className="movie-preview__left">
-        <div className="movie-preview__left-info">
-          <div className="movie-preview__left-raiting">
-            <Rating value={movie.tmdbRating} />
+        <div className="movie-preview__content-wrapper">
+          <div className="movie-preview__left-info">
+            <div className="movie-preview__left-raiting">
+              <Rating value={movie.tmdbRating} />
+            </div>
+            <span className="movie-preview__left-year">
+              {movie.releaseYear}
+            </span>
+            <span className="movie-preview__left-genre">
+              {getFormattedGenres(
+                movie.genres,
+                genreTranslations,
+                window.innerWidth <= 375 ? 1 : undefined
+              ).join(' ')}
+            </span>
+            <span className="movie-preview__left-runtime">
+              {getCorrectTimeMovie(movie.runtime)}
+            </span>
           </div>
-          <span className="movie-preview__left-year">{movie.releaseYear}</span>
-          <span className="movie-preview__left-genre">
-            {getFormattedGenres(
-              movie.genres,
-              genreTranslations,
-              window.innerWidth <= 375 ? 1 : undefined
-            ).join(' ')}
-          </span>
-          <span className="movie-preview__left-runtime">
-            {getCorrectTimeMovie(movie.runtime)}
-          </span>
-        </div>
-        <h1 className="movie-preview__left-title section-title">
-          {movie.title}
-        </h1>
-        <div className="movie-preview__description-container">
-          <p className="movie-preview__left-descr">{movie.plot}</p>
-          {isLongText && (
-            <button
-              className="movie-preview__read-more btn-reset"
-              onClick={() => setShowFullDescription(true)}
-            >
-              Читать полностью
-            </button>
-          )}
-          {showFullDescription && (
-            <Modal
-              isOpen={showFullDescription}
-              onClose={() => setShowFullDescription(false)}
-            >
-              <div className="movie-preview__descr-container">
-                <p className="movie-preview__descr">{movie.plot}</p>
-              </div>
-            </Modal>
-          )}
+          <h1 className="movie-preview__left-title section-title">
+            {movie.title}
+          </h1>
+          <div className="movie-preview__description-container">
+            <p className="movie-preview__left-descr">{movie.plot}</p>
+            {isLongText && (
+              <button
+                className="movie-preview__read-more btn-reset"
+                onClick={() => setShowFullDescription(true)}
+              >
+                Читать полностью
+              </button>
+            )}
+            {showFullDescription && (
+              <Modal
+                isOpen={showFullDescription}
+                onClose={() => setShowFullDescription(false)}
+              >
+                <div className="movie-preview__descr-container">
+                  <p className="movie-preview__descr">{movie.plot}</p>
+                </div>
+              </Modal>
+            )}
+          </div>
         </div>
         <div
           className={`movie-preview__buttons-container ${

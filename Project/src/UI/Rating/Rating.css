@@ -7,7 +7,6 @@
   padding: var(--spacing-4) var(--spacing-12);
   border-radius: 16px;
   color: var(--color-white);
-  /* background-color: green; */
 }
 
 .rating-excellent {

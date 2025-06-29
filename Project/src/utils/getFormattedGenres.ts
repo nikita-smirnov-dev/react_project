@@ -3,9 +3,6 @@ export function getFormattedGenres(
   fn: { [key: string]: string },
   limit?: number
 ): string[] {
-  // return arr.map((item: string) => {
-  //   return fn[item] || item;
-  // });
   const mapped = arr.map((item: string) => {
     return fn[item] || item;
   });

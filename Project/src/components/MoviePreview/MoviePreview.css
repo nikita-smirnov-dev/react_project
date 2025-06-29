@@ -9,6 +9,12 @@
   margin-right: var(--spacing-20);
 }
 
+.movie-preview__content-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+}
+
 .movie-preview__left-info {
   display: flex;
   align-items: center;
@@ -157,6 +163,10 @@
     margin-bottom: var(--spacing-80);
   }
 
+  .movie-preview__content-wrapper {
+    min-height: 300px;
+  }
+
   .movie-preview__left-title {
     font-size: var(--font-size-36);
   }
@@ -199,6 +209,10 @@
 
   .movie-preview__right {
     margin-bottom: var(--spacing-24);
+  }
+
+  .movie-preview__content-wrapper {
+    min-height: 250px;
   }
 
   .movie-preview__left-year,

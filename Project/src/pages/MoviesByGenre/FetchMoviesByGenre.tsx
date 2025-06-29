@@ -31,7 +31,7 @@ export const FetchMoviesByGenre = () => {
     queryFn: () => fetchMoviesByGenre(genre, count, page),
     queryKey: ['moviesByGenre', genre, page, count],
     placeholderData: (previousData) => previousData,
-    staleTime: 5 * 60 * 1000, // 5 минут
+    staleTime: 5 * 60 * 1000,
   });
 
   useEffect(() => {

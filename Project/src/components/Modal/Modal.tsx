@@ -7,7 +7,6 @@ interface ModalProps {
   children: React.ReactNode;
   isOpen: boolean;
   onClose?: VoidFunction;
-  isTrailerPage?: boolean;
 }
 
 export const Modal: FC<ModalProps> = ({ children, isOpen, onClose }) => {

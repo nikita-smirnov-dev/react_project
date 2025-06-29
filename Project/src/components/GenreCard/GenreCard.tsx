@@ -1,7 +1,8 @@
 import type { FC } from 'react';
 
-import './GenreCard.css';
 import type { MovieGenre } from '../../types/movieTypes';
+
+import './GenreCard.css';
 
 interface GenreCardProps {
   genreMovie: MovieGenre;

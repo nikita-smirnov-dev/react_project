@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { type FC } from 'react';
-// import { useParams } from 'react-router-dom';
+
 import { fetchMovieVideoTrailer } from '../../api/movieApi';
 import { DataLoader } from '../../UI/DataLoader';
 import { MovieTrailer } from './MovieTrailer';
@@ -11,7 +11,6 @@ interface FetchTrailerProps {
 }
 
 export const FetchMovieTrailer: FC<FetchTrailerProps> = ({ movieId }) => {
-  // const { id } = useParams<{ id: string }>();
   const { data, status, refetch } = useQuery({
     queryFn: () => fetchMovieVideoTrailer(Number(movieId)),
 
