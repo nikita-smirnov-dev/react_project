@@ -4,9 +4,13 @@
   --color-dark-gray: #393b3c;
   --color-menu-line: #dc5dfc;
   --color-blue-button: #67a5eb;
+  --color-hover-primary: #3d7bc6;
+  --color-hover-secondary: #555555;
+  --color-active-primary: #1e4080;
+  --color-active-secondary: #222222;
+  --color-active-btn-login: #6559b1;
   --color-cape-cod-button: #393b3c;
   --color-shaft-button: #333333;
-  --color-favorite-movie: #b4a9ff;
   --color-raiting-top-movie: #6a5dc2;
   --color-genre-card-text: #0a0b0b;
   --color-genre-card: #616161;
@@ -15,7 +19,7 @@
   --color-good-rating: #308e21;
   --color-average-rating: #777777;
   --color-poor-rating: #c82020;
-  --color-favorite-movie: #b4a9ff;
+  --color-active-accent: #b4a9ff;
   --color-modal: rgba(0, 0, 0, 0.5);
   --color-gradient-gray: rgba(255, 255, 255, 0.5);
   --color-social-footer: rgba(255, 255, 255, 0.8);
@@ -23,6 +27,7 @@
   --color-shadow-card: rgba(255, 255, 255, 0.33);
   --color-modal-form: rgba(0, 0, 0, 0.4);
   --color-search-item: rgba(255, 255, 255, 0.7);
+  --color-bg-input: rgba(255, 255, 255, 0.15);
 
   --font-size-12: 0.75rem;
   --font-size-14: 0.875rem;

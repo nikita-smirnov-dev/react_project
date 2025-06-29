@@ -1,6 +1,7 @@
 import type { FC } from 'react';
-import './Input.css';
 import type { FieldError } from 'react-hook-form';
+
+import './Input.css';
 
 interface InputProps {
   children?: React.ReactNode;

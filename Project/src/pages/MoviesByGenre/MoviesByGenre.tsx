@@ -49,11 +49,7 @@ export const MoviesByGenre: FC<MoviesByGenresProps> = ({
         </ul>
         <div className="movies-genres__btn-wrapper">
           {movieListByGenre.length < 50 && (
-            <Button
-              className="movies-genres__btn"
-              onClick={onloadMore}
-              type="button"
-            >
+            <Button className="movies-genres__btn" onClick={onloadMore}>
               Показать ещё
             </Button>
           )}

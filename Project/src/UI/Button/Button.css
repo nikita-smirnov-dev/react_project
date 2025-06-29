@@ -8,4 +8,21 @@
   color: var(--color-white);
   cursor: pointer;
   border: none;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.button--primary:hover {
+  background-color: var(--color-hover-primary);
+}
+
+.button--secondary:hover {
+  background-color: var(--color-hover-secondary);
+}
+
+.button--primary:active {
+  background-color: var(--color-active-primary);
+}
+
+.button--secondary:active {
+  background-color: var(--color-active-secondary);
 }

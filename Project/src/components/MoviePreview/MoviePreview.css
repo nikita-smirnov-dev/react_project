@@ -117,7 +117,7 @@
 }
 
 .movie-preview__favorite-svg {
-  color: var(--color-favorite-movie);
+  color: var(--color-active-accent);
 }
 
 .movie-preview__right img {

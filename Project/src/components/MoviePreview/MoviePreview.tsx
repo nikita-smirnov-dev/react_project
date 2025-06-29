@@ -161,6 +161,7 @@ export const MoviePreview: FC<MoviePreviewProps> = ({
               <Button
                 className="movie-preview__film"
                 onClick={handleAboutMovie}
+                variantAction="secondary"
               >
                 О фильме
               </Button>
@@ -169,6 +170,7 @@ export const MoviePreview: FC<MoviePreviewProps> = ({
             <Button
               className="movie-preview__favorite"
               onClick={handleToggleFavorite}
+              variantAction="secondary"
               aria-label={
                 isFavorite
                   ? 'Удалить фильм из избранного'
@@ -185,6 +187,7 @@ export const MoviePreview: FC<MoviePreviewProps> = ({
               <Button
                 className="movie-preview__update"
                 onClick={onUpdateClick}
+                variantAction="secondary"
                 aria-label="Следующий фильм"
               >
                 <RiLoopRightLine className="movie-preview__update-svg" />

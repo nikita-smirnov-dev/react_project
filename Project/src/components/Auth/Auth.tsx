@@ -13,7 +13,7 @@ interface AuthProps {
 }
 
 export const Auth: FC<AuthProps> = ({ closeModal }) => {
-  const [currentForm, setCurrentForm] = useState<AuthForm>('login');
+  const [currentForm, setCurrentForm] = useState<AuthForm | never>('login');
 
   const renderAuthForm = () => {
     switch (currentForm) {
@@ -33,8 +33,10 @@ export const Auth: FC<AuthProps> = ({ closeModal }) => {
             onRegisterClose={closeModal}
           />
         );
-      default:
-        return null;
+      default: {
+        const _exhaustiveCheck: never = currentForm;
+        throw new Error(`Необработанный случай: ${_exhaustiveCheck}`);
+      }
     }
   };
   return <div className="auth">{renderAuthForm()}</div>;

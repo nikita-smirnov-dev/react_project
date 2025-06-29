@@ -8,7 +8,6 @@ import { BREAKPOINTS, useMediaQuery } from '../../hooks/useMediaQuery';
 
 import './FavoritesMoviesList.css';
 import 'swiper/css';
-import { Link } from 'react-router-dom';
 
 interface FavoritesMoviesProps {
   moviesFavorites: FavoritesMovies;
@@ -27,7 +26,6 @@ export const FavoritesMoviesList: FC<FavoritesMoviesProps> = ({
   };
 
   return (
-    // <div className="favorites-container ">
     <div className="favorites-movies">
       {!moviesFavorites.length && (
         <h2 className="favorites-movies__title">
@@ -104,19 +102,16 @@ export const FavoritesMoviesList: FC<FavoritesMoviesProps> = ({
         <ul className="favorites-movies__list list-reset">
           {moviesFavorites.map((favoriteMovie) => (
             <li key={favoriteMovie.id}>
-              <Link to={`/about/${favoriteMovie.id}`}>
-                <MovieCard
-                  movie={favoriteMovie}
-                  hideRaiting={true}
-                  hideCloseButton={false}
-                  onDeleteCard={() => deleteFavoriteMovieCard(favoriteMovie)}
-                />
-              </Link>
+              <MovieCard
+                movie={favoriteMovie}
+                hideRaiting={true}
+                hideCloseButton={false}
+                onDeleteCard={() => deleteFavoriteMovieCard(favoriteMovie)}
+              />
             </li>
           ))}
         </ul>
       )}
     </div>
-    // </div>
   );
 };

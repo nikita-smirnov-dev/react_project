@@ -7,7 +7,8 @@ interface ButtonProps {
   className?: string;
   children: React.ReactNode;
   onClick?: VoidFunction;
-  type?: string;
+  type?: 'button' | 'submit' | 'reset';
+  variantAction?: 'primary' | 'secondary';
 }
 
 export const Button: FC<ButtonProps> = ({
@@ -16,12 +17,15 @@ export const Button: FC<ButtonProps> = ({
   children,
   className = '',
   onClick,
+  type = 'button',
+  variantAction = 'primary',
 }) => {
   return (
     <button
-      className={`button  ${className || ''}`}
+      className={`button button--${variantAction} ${className || ''}`}
       onClick={onClick}
       disabled={isDisabled}
+      type={type}
     >
       {children}
     </button>

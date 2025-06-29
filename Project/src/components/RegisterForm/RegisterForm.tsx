@@ -61,7 +61,7 @@ export const RegisterForm: FC<RegisterProps> = ({ onLoginClick }) => {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isValid },
+    formState: { errors },
   } = useForm<CreateRegisterForm>({
     mode: 'onBlur',
     resolver: zodResolver(CreateRegisterSchema),
@@ -166,7 +166,7 @@ export const RegisterForm: FC<RegisterProps> = ({ onLoginClick }) => {
             <Button
               className="modal-form__btn"
               isLoading={registerMutation.isPending}
-              isDisabled={!isValid}
+              type="submit"
             >
               Создать аккаунт
             </Button>
